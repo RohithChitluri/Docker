@@ -1,3 +1,3 @@
 FROM openjdk
-COPY ./build/libs/spring-boot-rest-service-1.1.war /deployments/spring-boot-rest-service.war
-CMD java -jar /deployments/spring-boot-rest-service.war
+COPY ./build/libs/Docker-1.1.war /deployments/Docker.war
+CMD java -jar /deployments/Docker.war
