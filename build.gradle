@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+apply plugin: 'war'
+//apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.rohith'
+version = '1.1'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+bootJar {
+	mainClassName = 'com.rohith.springbootrestservice.SpringBootRestServiceApplication'
+}
+
+springBoot {
+	mainClassName = 'com.rohith.springbootrestservice.SpringBootRestServiceApplication'
+}
+
+war {
+    enabled = true
+    archiveName 'spring-boot-rest-service.war'
+}
+
+dependencies {
+	//implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
